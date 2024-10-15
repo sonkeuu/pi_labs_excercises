@@ -54,7 +54,7 @@ def first_table():
 
     for digit in list_of_numbers_with_all_digits:
         lengh = len(digit)
-        last_index =
+        last_index = ...
         print(lengh)
 
 
