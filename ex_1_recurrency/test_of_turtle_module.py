@@ -27,6 +27,7 @@ def triangle(set_distance: int):
 def square(set_distance: int):
 
     for i in range(4):
-        turtle.left(90)
         turtle.forward(set_distance)
+        turtle.left(90)
+
 
