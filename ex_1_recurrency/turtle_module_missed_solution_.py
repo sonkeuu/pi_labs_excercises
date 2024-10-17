@@ -1,11 +1,45 @@
 from turtle import *
 import turtle
-from test_of_turtle_module import starting_position_square
-from test_of_turtle_module import square
-from Shape_class import Shape
+from turtle_module_testing_functions import starting_position_square
+from turtle_module_testing_functions import square
 
 turtle.speed(8)
 screen = turtle.Screen()
+
+
+from turtle import *
+import turtle
+from turtle_module_testing_functions import starting_position_triangle
+
+
+class Shape:
+    ...
+
+
+class Task_A10(Shape):
+
+    def __init__(self, set_the_distance_10):
+        self._distance_10 = set_the_distance_10
+
+    def shape_inside(self):
+
+        starting_position_triangle(self._distance_10)
+        distance_gap = 10
+
+        for i in range(10):
+            turtle.left(120)
+            turtle.forward(self._distance_10 - distance_gap)
+
+    def triangle_spiral(self):
+
+        starting_position_triangle(self._distance_10)
+
+        distance_spiral_gap = 10
+
+        for i in range(30):
+            turtle.left(120)
+            distance_spiral_gap = distance_spiral_gap + 10
+            turtle.forward(self._distance_10 - distance_spiral_gap)
 
 
 class Task_A1(Shape):
@@ -65,55 +99,6 @@ class Task_A1(Shape):
             distance_2 = self._distance / 2
             turtle.goto(0,0)
             #   turtle.right(90)
-
-
-def task_a1(x, min):
-    if x < min:
-        return
-    for i in range(4):
-        forward(x)
-        left(180)
-        task_a1(x/2, min)
-        left(90)
-
-
-def task_1_lab_1(x, minimum_x):
-    if x < minimum_x:
-        return
-    for i in range(4):
-        forward(x)
-        left(90)
-        task_1_lab_1(x/3, minimum_x)
-
-
-def task_2_lab_1(x, minimum_x):
-    if x < minimum_x:
-        return
-    for i in range(4):
-        forward(x)
-        left(180)
-        forward(3*x/4)
-        left(270)
-        task_2_lab_1(x/2, minimum_x)
-        #   right(90)
-
-
-
-def task_3_lab_1(x, minimum_x):
-    if x < minimum_x:
-        return
-    for i in range(4):
-        forward(x)
-        left(180)
-        task_3_lab_1(x/4, minimum_x)
-        forward(x)
-        left(90)
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
