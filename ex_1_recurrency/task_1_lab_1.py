@@ -1,7 +1,7 @@
 import turtle
 from turtle import *
 
-turtle.speed(15)
+turtle.speed(50)
 
 
 def task_1_lab_1(x, minimum_x):
