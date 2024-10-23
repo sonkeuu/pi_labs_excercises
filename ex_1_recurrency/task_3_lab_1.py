@@ -4,6 +4,7 @@ from turtle import *
 turtle.speed(50)
 turtle.left(90)
 turtle.backward(200)
+Screen().tracer(0)
 
 def task_3_lab_1(x, minimum_x):
     if x < minimum_x:
