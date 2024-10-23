@@ -1,8 +1,9 @@
 import turtle
 from turtle import *
 
-turtle.speed(5)
-Screen().tracer(0)
+turtle.speed(50)
+#Screen().tracer(0)
+
 
 def task_2_lab_1(x, minimum_x):
     if x < minimum_x:
@@ -31,7 +32,6 @@ def shape2(x, minx):
             left(180)
 
 
-
 def shape(x, lvl):
     if lvl == 0:
         return
@@ -53,5 +53,5 @@ if __name__ == '__main__':
     #test(100, 10)
     #task_2_lab_1(200, 25)
     #left(90)
-    shape(100, 4)
+    shape(200, 4)
     turtle.done()
