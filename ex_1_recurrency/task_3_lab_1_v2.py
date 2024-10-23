@@ -2,8 +2,6 @@
 import turtle
 from turtle import *
 
-from task_x import task_1_lab_1
-
 turtle.speed(50)
 turtle.left(90)
 #turtle.backward(200)
