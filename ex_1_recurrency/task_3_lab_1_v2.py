@@ -4,8 +4,8 @@ from turtle import *
 
 turtle.speed(50)
 turtle.left(90)
-#turtle.backward(200)
-#Screen().tracer(0)
+turtle.backward(200)
+Screen().tracer(0)
 
 def task_3_lab_1(x, level: int):
     if level == 0:
@@ -25,5 +25,5 @@ def task_3_lab_1(x, level: int):
 
 if __name__ == '__main__':
     #   minimum_x   --->  x / ?
-    task_3_lab_1(180, 4)
+    task_3_lab_1(300, 5)
     turtle.done()

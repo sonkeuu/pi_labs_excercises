@@ -1,7 +1,8 @@
 import turtle
 from turtle import *
 
-turtle.speed(5)
+turtle.speed(50)
+Screen().tracer(0)
 
 def task_2_lab_1(x, minimum_x):
     if x < minimum_x:
