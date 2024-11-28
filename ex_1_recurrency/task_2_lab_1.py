@@ -53,5 +53,5 @@ if __name__ == '__main__':
     #test(100, 10)
     #task_2_lab_1(200, 25)
     #left(90)
-    shape(100, 4)
+    shape(160, 4)
     turtle.done()

@@ -1,7 +1,7 @@
 import turtle
 from turtle import *
 
-turtle.speed(0)
+turtle.speed(20)
 #Screen().tracer(0)
 
 def trojkat(bok, ilosc):
@@ -18,8 +18,6 @@ def trojkat(bok, ilosc):
 
 trojkat(250, 5)
 turtle.done()
-
-
 
 
 
