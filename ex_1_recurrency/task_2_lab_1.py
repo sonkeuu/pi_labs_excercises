@@ -31,7 +31,6 @@ def shape2(x, minx):
             left(180)
 
 
-
 def shape(x, lvl):
     if lvl == 0:
         return

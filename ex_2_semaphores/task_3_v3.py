@@ -4,6 +4,12 @@ from threading import Semaphore
 # sum = 40
 # sum = 22
 
+global A
+global B
+global C
+A = 0
+B = 0
+C = 3
 
 sem_a = Semaphore()
 sem_b = Semaphore()
@@ -14,9 +20,6 @@ def thread_1():
     global A
     global B
     global C
-    A = 0
-    B = 0
-    C = 3
 
     PSEM.acquire()
     A = 10
@@ -54,21 +57,40 @@ def thread_3():
     PSEM.release(1)
 
 
-def thread_4():
+def thread_4_40():
     global A
     global B
     global C
 
+    thread_2()
+    thread_2()
+    thread_2()
+    thread_2()
     thread_1()
-    #thread_3()
-    thread_3()
     PSEM.acquire()
     suma: int = A + B + C
     print(suma)
     #PSEM.release()
 
+def thread_4():
+    global A
+    global B
+    global C
+
+    thread_3()
+    #thread_1()
+    #thread_3()
+    thread_1()
+    #thread_2()
+    #thread_3()
+    PSEM.acquire()
+    suma: int = A + B + C
+    print(suma)
+    # PSEM.release()
+
 def start_the_sequence():
     while True:
+        #thread_4_40()
         thread_4()
 
 

@@ -1,4 +1,3 @@
-
 import turtle
 from turtle import *
 
@@ -18,9 +17,6 @@ def task_3_lab_1(x, level: int):
         left(60)
         right(60)
         back(x)
-
-
-
 
 
 if __name__ == '__main__':

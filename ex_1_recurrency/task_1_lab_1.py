@@ -1,8 +1,8 @@
 import turtle
 from turtle import *
 
-turtle.speed(50)
-Screen().tracer(0)
+turtle.speed(0)
+#Screen().tracer(0)
 
 
 def task_1_lab_1(x, level):

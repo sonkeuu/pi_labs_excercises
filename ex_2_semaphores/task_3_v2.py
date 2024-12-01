@@ -14,9 +14,6 @@ def thread_1():
     global A
     global B
     global C
-    A = 0
-    B = 0
-    C = 3
 
     PSEM.acquire()
     A = 10
@@ -31,6 +28,9 @@ def thread_2():
     global A
     global B
     global C
+    A = 0
+    B = 0
+    C = 3
 
     PSEM.acquire()
     B = B + C
@@ -59,8 +59,8 @@ def thread_4():
     global B
     global C
 
-    thread_1()
-    #thread_3()
+    thread_2()
+    thread_2()
     thread_3()
     PSEM.acquire()
     suma: int = A + B + C
@@ -73,6 +73,3 @@ def start_the_sequence():
 
 
 start_the_sequence()
-
-
-
