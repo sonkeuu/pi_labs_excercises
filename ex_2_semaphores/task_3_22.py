@@ -2,9 +2,9 @@ from threading import Semaphore
 import threading
 
 global A, B, C
-A = 0
-B = 0
-C = 3
+A: int = 0
+B: int = 0
+C: int = 3
 
 sem_a = Semaphore(0)
 sem_b = Semaphore(1)
@@ -12,6 +12,7 @@ sem_c = Semaphore(0)
 PSEM = Semaphore(0)
 
 stop_thread = False
+
 
 def thread_1():
     global A, B, C, stop_thread
