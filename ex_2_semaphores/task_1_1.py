@@ -6,39 +6,39 @@ import threading
 sem_a = Semaphore(1)
 sem_b = Semaphore(0)
 sem_c = Semaphore(2)
-PSEM = Semaphore(1)
+SEM = Semaphore(1)
 
 def print_a():
     while True:
         sem_a.acquire()
         sem_a.acquire()
-        PSEM.acquire()
+        SEM.acquire()
         print("A")
         time.sleep(0.3)
         sem_b.release()
-        PSEM.release()
+        SEM.release()
 
 
 def print_b():
     while True:
         sem_b.acquire()
-        PSEM.acquire()
+        SEM.acquire()
         print("B")
         time.sleep(0.3)
         sem_a.release()
         sem_c.release()
-        PSEM.release()
+        SEM.release()
 
 
 def print_c():
     while True:
         sem_c.acquire()
         sem_c.acquire()
-        PSEM.acquire()
+        SEM.acquire()
         print("C")
         time.sleep(0.3)
         sem_b.release()
-        PSEM.release()
+        SEM.release()
 
 
 thread1 = threading.Thread(target=print_a)

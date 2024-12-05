@@ -9,7 +9,7 @@ C: int = 3
 sem_a = Semaphore(1)
 sem_b = Semaphore(0)
 sem_c = Semaphore(0)
-PSEM = Semaphore(0)
+SEM = Semaphore(0)
 
 stop_thread = False
 
@@ -38,7 +38,7 @@ def thread_2():
         return
     B = B + C
     print("Thread 2 is done.")
-    PSEM.release()
+    SEM.release()
     sem_b.acquire()
     if stop_thread:
         return
@@ -66,7 +66,7 @@ def thread_3():
 def thread_4_40():
     global A, B, C, stop_thread
 
-    PSEM.acquire()
+    SEM.acquire()
     if stop_thread:
         return
     suma: int = A + B + C
@@ -76,7 +76,7 @@ def thread_4_40():
     sem_a.release()
     sem_b.release()
     sem_c.release()
-    PSEM.release()
+    SEM.release()
 
 
 thread1 = threading.Thread(target=thread_1)
