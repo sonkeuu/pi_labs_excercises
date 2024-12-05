@@ -13,7 +13,6 @@ PSEM = Semaphore(0)
 
 stop_thread = False
 
-
 def thread_1():
     global A, B, C, stop_thread
 
