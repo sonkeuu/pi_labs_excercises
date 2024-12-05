@@ -1,24 +1,18 @@
-# sum = 40:
 
-1:
-A = 10
-B = B + 5
-C = C + A
-
-2:
-A = A + B
-B = B + C
-
-3:
-A = A + A
-C = B + 10
-B = B + A
-
-SUM:
 A = 0
 B = 0
 C = 3
 
+1:  A = 10
+    B = B + 5
+    C = C + A
+
+2:  B = B + C b=3
+    A = A + B a=3
+
+3:  A = 2 * A a=6
+    C = B + 10 c=13
+    B = B + A
 
 
-
+22 ->

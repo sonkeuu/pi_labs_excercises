@@ -12,33 +12,33 @@ def print_a():
     while True:
         sem_a.acquire()
         sem_a.acquire()
-        SEM.acquire()
+        #SEM.acquire()
         print("A")
         time.sleep(0.3)
         sem_b.release()
-        SEM.release()
+        #SEM.release()
 
 
 def print_b():
     while True:
         sem_b.acquire()
-        SEM.acquire()
+        #SEM.acquire()
         print("B")
         time.sleep(0.3)
         sem_a.release()
         sem_c.release()
-        SEM.release()
+        #SEM.release()
 
 
 def print_c():
     while True:
         sem_c.acquire()
         sem_c.acquire()
-        SEM.acquire()
+        #SEM.acquire()
         print("C")
         time.sleep(0.3)
         sem_b.release()
-        SEM.release()
+        #SEM.release()
 
 
 thread1 = threading.Thread(target=print_a)

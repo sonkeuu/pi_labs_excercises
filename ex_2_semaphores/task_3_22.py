@@ -20,38 +20,39 @@ def thread_1():
     if stop_thread:
         return
     A = 10
+    B = B + 5
     print("Thread 1 is done.")
-    SEM.release()
+    sem_b.release()
     sem_a.acquire()
     if stop_thread:
         return
-    B = B + 5
     C = C + A
 
 
 def thread_2():
     global A, B, C, stop_thread
 
-    for i in range(3):
-        sem_b.acquire()
-        if stop_thread:
-            return
-        B = B + C
-        A = A + B
-        print("Thread 2 is done.")
-        sem_b.release()
-    sem_a.release()
+    sem_b.acquire()
+    if stop_thread:
+        return
+    B = B + C
+    A = A + B
+    print("Thread 2 is done.")
+    sem_c.release()
 
 
 def thread_3():
-    global A
-    global B
-    global C
+    global A, B, C, stop_thread
 
+    sem_c.acquire()
+    if stop_thread:
+        return
     A = A + A
     C = B + 10
-    B = B + A
     print("Thread 3 is done.")
+    SEM.release()
+    sem_c.acquire()
+    B = B + A
 
 
 def thread_4_22():
@@ -72,13 +73,15 @@ def thread_4_22():
 
 thread1 = threading.Thread(target=thread_2)
 thread2 = threading.Thread(target=thread_1)
-thread3 = threading.Thread(target=thread_4_22)
+thread3 = threading.Thread(target=thread_3)
+thread4 = threading.Thread(target=thread_4_22)
 
 
 def start_the_sequence():
     thread1.start()
     thread2.start()
     thread3.start()
+    thread4.start()
     return
 
 
